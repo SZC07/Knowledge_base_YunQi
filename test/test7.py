@@ -14,3 +14,4 @@ print(embeddings)
 embeddings = generate_embeddings(["你好", "hello world"])
 print(embeddings["dense"][0])
 print(embeddings["sparse"][0])
+
