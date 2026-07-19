@@ -84,7 +84,7 @@ if __name__ == "__main__":
     setup_logging()
 
     # 定义初始状态
-    init_state = {"import_file_path": r"E:\AI Sgg\3.阶段三\掌柜智库课件0525\掌柜智库课件0525\2.资料\04-设备手册汇总\doc\华为擎云W585 用户指南-(PGUV,KOS&UOS_01,zh-cn).pdf"}
+    init_state = {"import_file_path": r"E:\AI Sgg\3.阶段三\掌柜智库课件0525\掌柜智库课件0525\2.资料\04-设备手册汇总\doc\华为擎云 W525 用户指南-(PGUW-WBX0,KOS&UOS_02,zh-cn).pdf"}
     workflow = KBImportWorkflow()
 
     # 方式一：实例化使用

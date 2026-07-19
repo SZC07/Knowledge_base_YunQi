@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 from typing import List, Dict
 
 
@@ -27,7 +28,7 @@ class NodeBGEEmbedding(BaseNode):
             print(f"{item_name}")
             sparse_vector = item.get("sparse_vector")
             print(sparse_vector)
-        path = r"E:\AI Sgg\3.阶段三\掌柜智库课件0525\掌柜智库课件0525\2.资料\04-设备手册汇总\output\B530\B530_new_new_new_chunks.json"
+        path = Path(state.get("md_path")).parent / f'{state.get("file_title")}_new_new_new_chunks.json'
         with open(path, "w", encoding="utf-8") as f:
             json.dump(
                 output_data,
