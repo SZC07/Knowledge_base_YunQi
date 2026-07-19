@@ -84,14 +84,14 @@ if __name__ == "__main__":
     setup_logging()
 
     # 定义初始状态
-    init_state = {"import_file_path": r"E:\AI Sgg\3.阶段三\掌柜智库课件0525\掌柜智库课件0525\2.资料\04-设备手册汇总\doc\H3C LA2608室内无线网关 用户手册-6W100-整本手册.pdf"}
+    init_state = {"import_file_path": r"E:\AI Sgg\3.阶段三\掌柜智库课件0525\掌柜智库课件0525\2.资料\04-设备手册汇总\doc\华为擎云W585 用户指南-(PGUV,KOS&UOS_01,zh-cn).pdf"}
     workflow = KBImportWorkflow()
 
     # 方式一：实例化使用
     for event in workflow.run(init_state,stream = True):
         print(event)
-        time.sleep(1.5)
 
     # 方式二：非流式执行
     # final_state = workflow.run(init_state,stream = False)
     # print(json.dumps(final_state,ensure_ascii=False, indent=4))
+

@@ -61,16 +61,20 @@ class NodeBGEEmbedding(BaseNode):
         将item_name和content转化为向量数据(稀疏和稠密)
         """
         print("node_bge_embedding: 步骤2：数据向量化")
+        # 存储最终携带向量的完整文档结果
         output_data = []
         batch_size = 5  # 批量处理
         for i in range(0, len(chunks), batch_size):
+            # 向量化处理后的
             five_ready_xlh_texts = []
+            # 处理前的
             five_texts = chunks[i:i + batch_size]  # 第一次从0块取到4块，一共取5块
             for doc in five_texts:
                 item_name = doc["item_name"]
                 content = doc["content"]
                 five_ready_xlh_texts.append(f"{item_name}\n{content}" if item_name else content)
 
+            # 对five_ready_xlh_texts进行向量化处理
             embeddings = generate_embeddings(five_ready_xlh_texts)  # 向量化结果
 
             for index, doc in enumerate(five_texts):
