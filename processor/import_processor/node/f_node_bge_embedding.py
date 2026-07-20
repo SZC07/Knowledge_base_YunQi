@@ -27,7 +27,7 @@ class NodeBGEEmbedding(BaseNode):
             content = item.get("content")
             print(f"{item_name}")
             sparse_vector = item.get("sparse_vector")
-            print(sparse_vector)
+            # print(sparse_vector)
         path = Path(state.get("md_path")).parent / f'{state.get("file_title")}_new_new_new_chunks.json'
         with open(path, "w", encoding="utf-8") as f:
             json.dump(

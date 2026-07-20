@@ -83,7 +83,7 @@ class NodeDocumentSplit(BaseNode):
                 return
             # 封装sections块
             sections.append({
-                "file_title": "file_title",
+                "file_title": file_title,
                 "title": current_title,
                 "parent_title": "",
                 "content": "\n".join(current_lines)
