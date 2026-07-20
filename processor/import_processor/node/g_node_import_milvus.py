@@ -32,8 +32,8 @@ class NodeImportMilvus(BaseNode):
 
         # 4 数据入库(字段+索引),返回数据库主键
         update_chunks = self._step_4_insert_data(milvus_client, chunks_json_data)
-        for chunk in update_chunks:
-            print(f"chunk_id:{chunk['chunk_id']}")
+        # for chunk in update_chunks:
+        #     print(f"chunk_id:{chunk['chunk_id']}")
         # 参照前一步骤生成json文档
 
         # 5 更新状态

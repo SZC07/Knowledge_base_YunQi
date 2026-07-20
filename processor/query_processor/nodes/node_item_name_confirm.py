@@ -139,7 +139,7 @@ if __name__ == "__main__":
 
     # 初始化图状态
     init_state = {
-        "original_query": "这个 B530 咋个操作、咋个用嘛？",
+        "original_query": "B530这个东西咋整了",
         "session_id":"123"
     }
 

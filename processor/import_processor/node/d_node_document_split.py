@@ -202,7 +202,7 @@ class NodeDocumentSplit(BaseNode):
         # 切分结果
         sub_sections = []
         # start=1：分片序号从1开始，不是0
-        for index,chunk in enumerate(splitter.split(body),start=1):
+        for index,chunk in enumerate(splitter.split_text(body),start=1):
             text = chunk.strip()
             # 空片段直接跳过，不生成数据
             if not text:
