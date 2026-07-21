@@ -176,7 +176,7 @@ class NodeItemNameConfirm(NodeBase):
         # 返回
         return results
 
-    # 步骤6 对齐结果
+    # 步骤6 对齐结果  List[Dict[item_name:List]]
     def _step_6_align_item_names(self, query_results: List[Dict]) -> Dict:
         print("step_6: 对齐结果,高分结果和低分结果整合")
         confirmed_item_names: List[str] = []
@@ -203,6 +203,7 @@ class NodeItemNameConfirm(NodeBase):
 
             # 有多条匹配结果，找出最匹配的
             if len(high_results) > 1:
+                # 多条高分匹配结果
                 picked = None
                 if extracted_name:
                     for hr in high_results:
