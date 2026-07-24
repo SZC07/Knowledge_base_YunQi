@@ -190,7 +190,7 @@ class NodeItemNameConfirm(NodeBase):
                 continue
 
             high_results = [m for m in matches if m.get("score", 0) >= 0.8]  # 高分结果
-            mid_results = [m for m in matches if m.get("score", 0) >= 0.6]  # 中分结果
+            mid_results = [m for m in matches if 0.8>m.get("score", 0) >= 0.6]  # 中分结果
 
             """
                 有高分则取高分，无高分取中分
@@ -252,6 +252,7 @@ class NodeItemNameConfirm(NodeBase):
             # 封装结果
             state["item_names"] = confirmed
             state["answer"] = ""
+            return state
 
         # 2 有备选(>0.6)
         if options:
@@ -260,12 +261,16 @@ class NodeItemNameConfirm(NodeBase):
             options_str = "、".join(options)
             state["answer"] = f"您是想问以下哪个产品：{options_str}？请明确一下型号。"
 
+            return state
+
         # 3 没命中
         if not confirmed and not options:
             # 封装结果
             state[
                 "answer"] = "抱歉，未找到相关产品，请提供准确型号以便我为您查询。"  # 如果有高于0.6的可选项options(反问用户，你想问的是xxx设备吗)或者低于0.6（抱歉，未找到相关产品）
             state["item_names"] = []  # 如果有高于0.8的，才封装state进入后续节点
+
+            return state
 
         # 4 返回state
         return state
