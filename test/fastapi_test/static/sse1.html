@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSE1</title>
+</head>
+<body>
+    <h3>场景1：基础的sse测试</h3>
+    <div id="result"></div>
+    <button onclick="a()">点我</button>
+</body>
+
+<script>
+    function a(){
+        resultDom = document.getElementById("result");
+        eventSource = new EventSource('http://localhost:8000/simple_stream');
+        eventSource.onmessage = function (event){
+            if (event.data ==="[END]"){
+                eventSource.close();
+                return;
+            }
+            resultDom.innerHTML +=event.data;
+        }
+    }
+</script>
+</html>
